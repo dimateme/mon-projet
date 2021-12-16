@@ -1,0 +1,28 @@
+<div class="row g-5">
+  <div class="col-md-7 col-lg-8">
+    <h4 class="mb-3">Modèle de bateau</h4>
+
+      <div class="row g-3">
+        <div class="col-sm-6">
+            <label for="firstName" class="form-label">Modèle</label>
+          <input type="text" class="form-control" id="BoatModel"(keyup)="getData($event)"  placeholder="" value="" required>
+          <select  *ngIf="showMe" name="" id="" class="search-result"(change)="selectionDuBateau($event)" >
+            <option value="Empty"></option>
+            <option *ngFor="let bateau of tableauBateau" value={{bateau.ref}}>{{bateau.name}}</option>
+          </select>
+
+
+        </div>
+        <div class="col-md-6">
+          <label for="lastName" class="form-label">Longueur (en mètre)</label>
+          <div class="input-group" style="display: flex;">
+              <input type="number"    class="form-control" id="BoatLength" value={{longeurBateau}} placeholder=""  required>
+              <span class="">mètres</span>
+          </div>
+        </div>
+      </div>
+
+  </div>
+</div>
+<app-voile-bateau [longueurm]="longeurBateau" [longgvl]="longeurgvl" [longgvsl]="longeurgvsl"  [longgve]="longeurgve"  [longgm]="longueurgm" [longge]="longueurge" [longss]="longueurss" [longsa]="longueursa" [longgs]="longueurgs"></app-voile-bateau>
+
